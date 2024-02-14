@@ -6,6 +6,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 public class presentacion extends AppCompatActivity {
 
     @Override
@@ -19,6 +22,12 @@ public class presentacion extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
+                FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+                if(currentUser==null){
+                    startActivity(new Intent(presentacion.this,login.class));
+                }else {
+                    startActivity(new Intent(presentacion.this,MainActivity.class));
+                }
                 startActivity(new Intent(presentacion.this,crearCuenta.class));
                 finish(); //termina la pantalla de presentación
             }

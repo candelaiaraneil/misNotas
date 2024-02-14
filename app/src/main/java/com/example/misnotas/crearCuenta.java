@@ -69,13 +69,13 @@ public class crearCuenta extends AppCompatActivity {
                         cambioEnProgreso(false);
                         if (task.isSuccessful()){
                             //se creó la cuenta correctamente
-                            Toast.makeText(crearCuenta.this, "La cuenta se ha creado correctamente, revisá tu e-mail para corroborarlo",Toast.LENGTH_SHORT).show();
+                            Utility.mostrarToast(crearCuenta.this, "La cuenta se ha creado correctamente, revisá tu e-mail para corroborarlo");
                             firebaseAuth.getCurrentUser().sendEmailVerification();
                             firebaseAuth.signOut();
                             finish();
                         }else {
                             //la creación de cuenta falló
-                            Toast.makeText(crearCuenta.this,task.getException().getLocalizedMessage(),Toast.LENGTH_SHORT).show();
+                            Utility.mostrarToast(crearCuenta.this,task.getException().getLocalizedMessage());
                         }
                     }
                 }
