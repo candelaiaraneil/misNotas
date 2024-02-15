@@ -7,5 +7,66 @@
     android:background="@color/miColor"
     android:padding="16dp"
     tools:context=".detallesNota">
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/diseno_barra_tit">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/titulo_pagina"
+            android:text="Añadir nueva nota"
+            android:textSize="27sp"
+            android:textColor="@color/white"
+            android:textStyle="bold"/>
+
+        <ImageButton
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:id="@+id/guardarNota_btn"
+            android:src="@drawable/baseline_done_24"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            app:tint="@color/white"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/diseno_barra_tit"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_marginVertical="26dp"
+        android:backgroundTint="@color/white"
+        android:background="@drawable/esquina_redondeada">
+        
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tituloNotas_texto"
+            android:hint="Título"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginVertical="8dp"
+            android:padding="12dp"
+            android:textColor="@color/black"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/contenidoNotas_texto"
+            android:minLines="12"
+            android:gravity="top"
+            android:hint="Escribí acá..."
+            android:textSize="20sp"
+            android:layout_marginVertical="8dp"
+            android:padding="12dp"
+            android:textColor="@color/black"/>
+        
+    </LinearLayout>
 
 </RelativeLayout>
