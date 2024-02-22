@@ -1,6 +1,7 @@
 package com.example.misnotas;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,6 +26,15 @@ public class adaptadorNota extends FirestoreRecyclerAdapter<Nota, adaptadorNota.
         holder.tituloTextView.setText(Nota.titulo);
         holder.contenidoTextView.setText(Nota.contenido);
         holder.timestampTextView.setText(Utility.timestampAString(Nota.timestamp));
+
+        holder.itemView.setOnClickListener((v)->{
+            Intent intent = new Intent(context, detallesNota.class);
+            intent.putExtra("titulo", Nota.titulo);
+            intent.putExtra("contenido", Nota.contenido);
+            String docId = this.getSnapshots().getSnapshot(position).getId();
+            intent.putExtra("docId", docId);
+            context.startActivity(intent);
+        });
     }
 
     @NonNull
