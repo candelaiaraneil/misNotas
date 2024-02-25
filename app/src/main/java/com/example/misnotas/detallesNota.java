@@ -3,6 +3,7 @@ package com.example.misnotas;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -18,6 +19,8 @@ public class detallesNota extends AppCompatActivity {
 
     EditText tituloEditText, contenidoEditText;
     ImageButton guardarNotaBtn;
+
+    ImageButton cancelarNotaBtn;
     TextView paginaTituloTextView;
     String titulo, contenido, docId;
     boolean enModoEdicion = false;
@@ -33,6 +36,7 @@ public class detallesNota extends AppCompatActivity {
         guardarNotaBtn = findViewById(R.id.guardarNota_btn);
         paginaTituloTextView = findViewById(R.id.titulo_pagina);
         borrarNotaTextViewBtn = findViewById(R.id.borrar_nota_text_view_btn);
+        cancelarNotaBtn = findViewById(R.id.cancelarNota_btn);
 
         //se reciben datos
         titulo = getIntent().getStringExtra("titulo");
@@ -56,6 +60,11 @@ public class detallesNota extends AppCompatActivity {
 
         borrarNotaTextViewBtn.setOnClickListener((v)-> borrarNotaDesdeFirebase());
 
+    }
+
+    public void cancelarNota(View view) {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 
     void guardarNota(){

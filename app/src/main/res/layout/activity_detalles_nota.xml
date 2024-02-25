@@ -32,6 +32,17 @@
             android:background="?attr/selectableItemBackgroundBorderless"
             />
 
+        <ImageButton
+            android:id="@+id/cancelarNota_btn"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="47dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/baseline_cancel_24"
+            android:onClick="cancelarNota"
+            app:tint="@color/white" />
+
     </RelativeLayout>
 
     <LinearLayout
