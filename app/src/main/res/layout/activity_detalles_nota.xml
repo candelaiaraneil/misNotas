@@ -69,4 +69,16 @@
         
     </LinearLayout>
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/borrar_nota_text_view_btn"
+        android:text="Borrar nota"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:visibility="gone"
+        android:textColor="#FF0000"
+        />
+
 </RelativeLayout>

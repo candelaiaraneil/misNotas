@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -20,6 +21,7 @@ public class detallesNota extends AppCompatActivity {
     TextView paginaTituloTextView;
     String titulo, contenido, docId;
     boolean enModoEdicion = false;
+    TextView borrarNotaTextViewBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +32,7 @@ public class detallesNota extends AppCompatActivity {
         contenidoEditText = findViewById(R.id.contenidoNotas_texto);
         guardarNotaBtn = findViewById(R.id.guardarNota_btn);
         paginaTituloTextView = findViewById(R.id.titulo_pagina);
+        borrarNotaTextViewBtn = findViewById(R.id.borrar_nota_text_view_btn);
 
         //se reciben datos
         titulo = getIntent().getStringExtra("titulo");
@@ -46,9 +49,12 @@ public class detallesNota extends AppCompatActivity {
         contenidoEditText.setText(contenido);
         if(enModoEdicion){
             paginaTituloTextView.setText("Edita tu nota");
+            borrarNotaTextViewBtn.setVisibility(View.VISIBLE);
         }
 
         guardarNotaBtn.setOnClickListener((v)-> guardarNota());
+
+        borrarNotaTextViewBtn.setOnClickListener((v)-> borrarNotaDesdeFirebase());
 
     }
 
@@ -89,6 +95,25 @@ public class detallesNota extends AppCompatActivity {
                 }else {
                     //no se creó la nota
                     Utility.mostrarToast(detallesNota.this, "La nota no ha sido creada, verificar");
+                }
+            }
+        });
+    }
+
+    void borrarNotaDesdeFirebase() {
+        DocumentReference documentReference;
+
+            documentReference = Utility.getCollectionReferencePorNotas().document(docId);
+        documentReference.delete().addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if (task.isSuccessful()){
+                    //se eliminó la nota
+                    Utility.mostrarToast(detallesNota.this, "La nota ha sido eliminada con éxito");
+                    finish();
+                }else {
+                    //no se creó la nota
+                    Utility.mostrarToast(detallesNota.this, "La nota no ha sido eliminada, verificar");
                 }
             }
         });
