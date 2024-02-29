@@ -4,4 +4,5 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="colorBoton">#DBFFB6</color>
+    <color name="colorBotonEliminarNota">#8BFF2626</color>
 </resources>

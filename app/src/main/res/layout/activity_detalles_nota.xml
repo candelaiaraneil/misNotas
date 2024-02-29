@@ -83,15 +83,16 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/borrar_nota_text_view_btn"            android:background="@drawable/esquina_redondeada"
+        android:id="@+id/borrar_nota_text_view_btn"
+        android:background="@drawable/esquina_redondeada"
         android:padding="8dp"
-        android:backgroundTint="@color/white"
+        android:backgroundTint="@color/colorBotonEliminarNota"
         android:text="Borrar nota"
         android:layout_alignParentBottom="true"
         android:gravity="center"
         android:textSize="21sp"
         android:visibility="gone"
-        android:textColor="#FF0000"
+        android:textColor="#000000"
         />
 
 </RelativeLayout>

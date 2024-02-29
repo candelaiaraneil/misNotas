@@ -75,12 +75,14 @@
             />
 
         <com.google.android.material.button.MaterialButton
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_marginStart="125dp"
             android:id="@+id/login_btn"
+            android:textColor="@color/black"
             android:layout_height="64dp"
             android:text="Entrar"
             android:layout_marginTop="12dp"
-            android:textSize="16sp"
+            android:textSize="18dp"
             />
 
         <ProgressBar
