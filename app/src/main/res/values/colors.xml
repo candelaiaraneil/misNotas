@@ -3,4 +3,5 @@
     <color name="miColor">#E8C457</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="colorBoton">#DBFFB6</color>
 </resources>

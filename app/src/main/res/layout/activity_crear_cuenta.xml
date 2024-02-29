@@ -121,6 +121,10 @@
             android:layout_height="wrap_content"
             android:textStyle="bold"
             android:id="@+id/loginTextView_btn"
+            android:background="@drawable/esquina_redondeada"
+            android:padding="8dp"
+            android:textSize="18dp"
+            android:backgroundTint="@color/colorBoton"
             android:text="Iniciar sesión"/>
 
     </LinearLayout>
