@@ -75,7 +75,7 @@ public class crearCuenta extends AppCompatActivity {
                             finish();
                         }else {
                             //la creación de cuenta falló
-                            Utility.mostrarToast(crearCuenta.this,"La cuenta ingresada ya está siendo utilizada por otro usuario");
+                            Utility.mostrarToast(crearCuenta.this,"El email ingresado ya está siendo utilizado por otro usuario");
                         }
                     }
                 }
