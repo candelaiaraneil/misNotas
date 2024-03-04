@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
+import android.webkit.WebChromeClient;
+import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
@@ -35,6 +37,13 @@ public class login extends AppCompatActivity {
         loginBoton = findViewById(R.id.login_btn);
         progressBar = findViewById(R.id.barraDeProgreso);
         crearCuentaBotonTextView = findViewById(R.id.crearCuenta_btn);
+
+
+        WebView webView = findViewById(R.id.webView);
+        String video = "<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/uvQydh-2zzo?si=res5d03FgEQHPgg1\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen></iframe>";
+        webView.loadData(video, "text/html", "utf-8");
+        webView.getSettings().setJavaScriptEnabled(true);
+        webView.setWebChromeClient(new WebChromeClient());
 
         //configuración de oyentes al hacer click
         loginBoton.setOnClickListener((v)-> loginUsuario() );
